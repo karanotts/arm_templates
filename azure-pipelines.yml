@@ -9,7 +9,7 @@ trigger:
 jobs:
 - job: 'DeployMonitoring'
   pool:
-    vmImage: 'Azure-VSTS-VS2017'
+    vmImage: 'vs2017-win2016'
   steps:
   - task: AzureResourceGroupDeployment@2
     displayName: 'Provision Web Ping Test'
