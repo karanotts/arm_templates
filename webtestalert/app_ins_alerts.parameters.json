@@ -9,7 +9,7 @@
             "value": [
                 {
                 "name": "statuspage",
-                "guid": "[newGuid()]",
+                "guid": "GEN-GUID",
                 "url": "https://payments.statuspage.io/api/v2/status.json",
                 "findText": "All Systems Operational",
                 "locations": [
