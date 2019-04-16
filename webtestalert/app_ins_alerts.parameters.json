@@ -14,7 +14,7 @@
         "health_page_text": {
             "value": "All Systems Operational"
         },
-        "queryRule": {
+        "log_query": {
             "value": "availabilityResults\n| where message contains \"Validation Rule Error\"\n"
         },
         "actionGroup": { 
