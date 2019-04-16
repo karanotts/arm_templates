@@ -14,7 +14,7 @@
         "health_page_text": {
             "type": "string"
         },
-        "queryRule": {
+        "log_query": {
             "type": "string"
         },
         "actionGroup": { 
