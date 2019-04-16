@@ -4,25 +4,39 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
+Required input: 
+
+```json
+"app_ins_name": {
+    "value": "rdo-temp-statuspage-ai"
+    }
+```
+app_ins_name: name for your application
 
 ```json
 "health_page": {
-            "value": [
-                {
-                "name": "statuspage",
-                "guid": "[newGuid()]",
-                "url": "https://payments.statuspage.io/api/v2/status.json",
-                "findText": "All Systems Operational",
-                "locations": [
-                    { "Id": ```json },
-                    { "Id": "emea-se-sto-edge" }
-                    ]
-                }
-            ]
+    "value": [
+        {
+        "name": "MyWebPage",
+        "url": "https://mywebpage.com/api/latest/status.json",
+        "findText": "All Systems Operational"
         }
+    ]
+}
 ```
 name: name for your test
-guid: generated automatically
 url: page you want to monitor
 findText: text that must appear in the page for the webtest to pass
-locations: ping locations
+
+```json
+"queryRule":{
+    "value": [
+        {
+        "query": "availabilityResults\n| where message contains \"Validation Rule Error\"\n",
+        "actionGroup": "/subscriptions/MySubscriptionGUID/resourceGroups/MyLogAlertsSpace/providers/microsoft.insights/actionGroups/MyActionGroup"
+        }
+    ]
+}
+```
+query: Log Analytics query that triggers alert
+actionGroup: https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups
