@@ -130,7 +130,7 @@
                 "[concat('hidden-link:', resourceId('Microsoft.Insights/components', parameters('app_ins_name')))]": "Resource"
             },
             "properties": {
-                "description": "Search query \"' parameters('health_page_text') '\" not found in availability test.",
+                "description": "Search query not found in availability test.",
                 "enabled": "true",
                 "source": {
                     "query": "[parameters('log_query')]",
