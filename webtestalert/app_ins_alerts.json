@@ -6,13 +6,30 @@
             "type": "string"
         },
         "health_page": {
-            "type": "array"
+            "type": "array",
+            "defaultValue": [
+                {
+                "guid": "[newGuid()]",
+                "locations": [
+                    { "Id": "emea-ru-msa-edge" },
+                    { "Id": "emea-se-sto-edge" }
+                    ]
+                }
+            ]
         },
         "queryRule":{
-            "type": "array"
+            "type": "array",
+            "defaultValue": [
+                {
+                "name": "Page validation error",
+                "description": "Search query not found in availability test.",
+                "severity": 0
+                }
+            ]
         },
         "location": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
         }
     },
     "variables": {
