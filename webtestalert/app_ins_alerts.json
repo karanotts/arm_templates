@@ -14,9 +14,6 @@
         "health_page_text": {
             "type": "string"
         },
-        "log_query": {
-            "type": "string"
-        },
         "actionGroup": { 
             "type": "string"
         },
@@ -38,6 +35,7 @@
                 {
                 "name": "Page validation error",
                 "description": "Search query not found in availability test.",
+                "query": "availabilityResults\n| where message contains \"Validation Rule Error\"\n",
                 "severity": 0
                 }
             ]
@@ -133,7 +131,7 @@
                 "description": "Search query not found in availability test.",
                 "enabled": "true",
                 "source": {
-                    "query": "[parameters('log_query')]",
+                    "query": "[parameters('queryRule')[0].query]",
                     "authorizedResources": [],
                     "dataSourceId": "[resourceId('microsoft.insights/components', parameters('app_ins_name'))]",
                     "queryType": "ResultCount"
